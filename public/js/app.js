@@ -4,6 +4,7 @@ const messageOne = document.querySelector('#m1')
 const messageTwo = document.querySelector('#m2')
 const messageThree = document.querySelector('#m3')
 const messageFour = document.querySelector('#m4')
+const messageFive = document.querySelector('#m5')
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -12,6 +13,7 @@ form.addEventListener('submit', (event) => {
     messageTwo.textContent = ''
     messageThree.textContent = ''
     messageFour.textContent = ''
+    messageFive.textContent = ''
     fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if(data.error){
@@ -21,6 +23,7 @@ form.addEventListener('submit', (event) => {
                 messageTwo.textContent = 'Description: ' + data.forecast.description
                 messageThree.textContent = 'Temperature: ' + data.forecast.temperature
                 messageFour.textContent = 'It feels like: ' + data.forecast.feelslike + ' degrees'
+                messageFive.textContent = 'Humidity: ' + data.forecast.humidity
             }
         })  
     })
