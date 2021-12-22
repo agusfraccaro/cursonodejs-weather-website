@@ -23,7 +23,7 @@ form.addEventListener('submit', (event) => {
                 messageTwo.textContent = 'Description: ' + data.forecast.description
                 messageThree.textContent = 'Temperature: ' + data.forecast.temperature
                 messageFour.textContent = 'It feels like: ' + data.forecast.feelslike + ' degrees'
-                messageFive.textContent = 'Humidity: ' + data.forecast.humidity
+                messageFive.textContent = 'Humidity: ' + data.forecast.humidity + '%.'
             }
         })  
     })
